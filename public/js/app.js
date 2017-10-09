@@ -42626,8 +42626,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.$emit('closeRequest');
     },
     save: function save() {
+      var _this = this;
+
       axios.post('/insgas', this.$data.list).then(function (response) {
-        return console.log(response);
+        console.log(response);
+        _this.close();
       }).catch(function (error) {
         return console.log(error);
       });
@@ -42782,8 +42785,8 @@ var render = function() {
                 {
                   name: "model",
                   rawName: "v-model",
-                  value: _vm.list.marca,
-                  expression: "list.marca"
+                  value: _vm.list.modelo,
+                  expression: "list.modelo"
                 }
               ],
               staticClass: "input",
@@ -42791,13 +42794,13 @@ var render = function() {
                 type: "text",
                 placeholder: "Marca y modelo del vehiculo"
               },
-              domProps: { value: _vm.list.marca },
+              domProps: { value: _vm.list.modelo },
               on: {
                 input: function($event) {
                   if ($event.target.composing) {
                     return
                   }
-                  _vm.list.marca = $event.target.value
+                  _vm.list.modelo = $event.target.value
                 }
               }
             })

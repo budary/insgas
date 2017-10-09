@@ -42,6 +42,7 @@ class InsGasController extends Controller
         $ig->modelo = $request->modelo;
         $ig->telefono = $request->telefono;
         $ig->fecha = $request->facha;
+        $ig->save();
     }
 
     /**

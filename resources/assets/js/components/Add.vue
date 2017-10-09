@@ -40,7 +40,7 @@
         <div class="field">
           <label class="label">Marca-Modelo</label>
           <div class="control">
-            <input class="input" type="text" placeholder="Marca y modelo del vehiculo" v-model="list.marca">
+            <input class="input" type="text" placeholder="Marca y modelo del vehiculo" v-model="list.modelo">
           </div>
         </div>
 
@@ -83,7 +83,10 @@ export default {
     },
 
     save() {
-      axios.post('/insgas', this.$data.list).then((response) => console.log(response))
+      axios.post('/insgas', this.$data.list).then((response) => {
+        console.log(response);
+        this.close();
+        })
         .catch((error) =>  console.log(error));
 
     }
