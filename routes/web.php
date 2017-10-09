@@ -12,9 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('insgas');
+    return view('welcome');
 });
 
-Route::get('/{name}', function () {
+Route::get('/insgas/{name}', function () {
     return redirect('/');
 })->where('name', '[A-Za-z]+');
+
+Route::resource('insgas', 'InsGasController');
